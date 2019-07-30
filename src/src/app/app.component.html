@@ -1,0 +1,53 @@
+<div class="mainContainer">
+    <div class="content">
+        <div class="header">
+            <h1>Upload Images</h1>
+        </div>
+        <div class="row margin25">
+
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <div class="custom-file">
+                    <form  enctype="multipart/form-data">
+                      <input (change)="fileChange($event)"  type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" accept="image/x-png,image/jpg,image/jpeg" multiple>
+                    </form>
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                </div>
+                <div class="input-group-prepend">
+                  <span class="input-group-text upload" (click)="upload()" id="btnUpload">Upload</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm" *ngFor="let url of urls">
+                  <img  [src]="url.image" class="rounded mb-3" width="180">
+                   <span (click)="removeFile(url.name)">Remove</span>
+                </div>
+              </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Image URL</th>
+                <th>Images</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="images.length == 0">
+                <td colspan="2">No images available</td>
+              </tr>
+              <tr *ngFor="let image of images">
+                <td >{{image.filename}}</td>
+                <td ><img style="height: 78px;" [src]="baseUrl+image.filename"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,27 @@
+  .header{
+      text-align: center;
+  }
+
+  
+  .header h1{
+      font-family: serif;
+      font-size: 38px;
+      font-family: 'Times New Roman';
+  }
+  .content{
+      margin: 100px;
+  }
+  .margin25{
+      margin: 25px;
+  }
+  .upload{
+      cursor: pointer;
+  }
+
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+
